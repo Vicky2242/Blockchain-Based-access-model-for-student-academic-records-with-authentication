@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institution Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='institution_dashboard.css') }}"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Your Institution Dashboard</h1>
+        <div class="nav-links">
+            <ul>
+                <li><a href="{{ url_for('enroll_students') }}">Enroll Students</a></li>
+                <li><a href="{{ url_for('upload_credentials') }}">Upload Certificate Credentials</a></li>
+                <li><a href="{{ url_for('view_students') }}">View Students</a></li>
+                <li><a href="{{ url_for('institution_logout') }}">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

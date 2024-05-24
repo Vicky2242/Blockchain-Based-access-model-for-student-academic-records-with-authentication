@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Authority Signup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='authority_signup.css') }}"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="container">
+        <div class="subheading">
+            <h2>New Authority? Sign up here</h2>
+        </div>
+        <div class="form-container">
+            <form id="signupForm">
+                <label for="institutionName">Institution Name</label>
+                <input type="text" id="institutionName" name="institutionName" placeholder="Enter your institution name">
+
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" placeholder="Enter your address">
+
+                <label for="contactNo">Contact Number</label>
+                <input type="text" id="contactNo" name="contactNo" placeholder="Enter your contact number">
+
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username">
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password">
+
+                <button type="button" onclick="signup()">Sign-up</button>
+            </form>
+        </div>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function signup() {
+            document.getElementById('result').innerText = 'Authority sign-up task completed';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Institution Signup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='institution_signup.css') }}"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="container">
+        <div class="subheading">
+            <h2>New Institution? Sign up here</h2>
+        </div>
+        <div class="form-container">
+            <form id="signupForm" method="POST" action="/institution/signup">
+                <label for="institution_name">Institution Name</label>
+                <input type="text" id="institution_name" name="institution_name" placeholder="Enter your institution name" autocomplete="organization">
+
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" placeholder="Enter your address" autocomplete="street-address">
+
+                <label for="contact_number">Contact Number</label>
+                <input type="text" id="contact_number" name="contact_number" placeholder="Enter your contact number" autocomplete="tel">
+
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" autocomplete="username">
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="new-password">
+
+                <button type="button" id="signupButton">Sign-up</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Your custom JavaScript code for signup functionality -->
+    <script>
+        $(document).ready(function() {
+            $("#signupButton").click(function() {
+                signup();
+            });
+        });
+
+        function signup() {
+            var institutionName = $("#institution_name").val();
+            var address = $("#address").val();
+            var contactNumber = $("#contact_number").val();
+            var username = $("#username").val();
+            var password = $("#password").val();
+
+            // Validate form fields
+            if (!institutionName || !address || !contactNumber || !username || !password) {
+                $("#result").text("Please fill out all fields");
+                return;
+            }
+
+            $.ajax({
+                url: "/institution/signup",
+                method: "POST",
+                data: {
+                    institution_name: institutionName,
+                    address: address,
+                    contact_number: contactNumber,
+                    username: username,
+                    password: password
+                },
+                success: function(response) {
+                    $("#result").text(response);
+                    window.location.href = "/institution/login";
+                },
+                error: function(xhr, status, error) {
+                    $("#result").text("Error: " + xhr.responseText);
+                }
+            });
+        }
+    </script>
+    
+</body>
+</html>

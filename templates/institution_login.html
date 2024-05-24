@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institution Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='institution_styles.css') }}"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="container">
+        <div class="centered-text">
+            <h1>Institution Login</h1>
+        </div>
+        <div class="centered-image">
+            <img src="{{ url_for('static', filename='institution_image.jpg') }}" alt="Authority Image">
+        </div>
+        <div class="subheading">
+            <h2>Institution Login Screen</h2>
+        </div>
+        <div class="form-container">
+            <form id="signupForm">
+                <input type="text" name="username" placeholder="username">
+                <input type="password" name="password" placeholder="password">
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <div class="signup-link">
+            <p>New Institution ? <a href="/institution/signup">Signup Here</a></p>
+        </div>
+    </div>
+</body>
+</html>

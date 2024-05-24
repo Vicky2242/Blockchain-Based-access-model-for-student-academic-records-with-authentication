@@ -1,0 +1,58 @@
+/* Reset default styles */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Center container vertically and horizontally */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+}
+
+/* Center text */
+.centered-text {
+    text-align: center;
+}
+
+/* Center image */
+.centered-image {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Style subheading */
+.subheading {
+    margin-top: 20px;
+    text-align: center;
+    color: red;
+}
+
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.form-container button {
+    padding: 10px 20px;
+    background-color: #666;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.form-container button:hover {
+    background-color: #444;
+}
+/* Style login form inputs and button */
